@@ -5,95 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nayeem Faisal - Resume</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f4f4f9; color: #333; }
-        header { background: #0056b3; color: #fff; padding: 10px 20px; text-align: center; }
-        header img { border-radius: 50%; max-width: 120px; margin-top: 10px; }
-        section { padding: 20px; max-width: 800px; margin: 20px auto; background: #fff; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); color: #333; }
+        header { background: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px 0; text-align: center; position: relative; }
+        header img { border-radius: 50%; width: 140px; border: 5px solid white; }
+        header:after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(120deg, #f6d365 0%, #fda085 100%); opacity: 0.85; z-index: -1; }
+        section { padding: 20px; max-width: 800px; margin: 20px auto; background: #fff; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 8px; opacity: 0.95; transform: translateY(20px); transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
+        section:hover { transform: translateY(0); opacity: 1; }
         h1, h2 { text-align: center; }
         .job { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
-        .skills { background: #e2e2e2; padding: 5px; display: inline-block; margin-right: 5px; }
+        .skills { background: #e2e2e2; padding: 5px; display: inline-block; margin-right: 5px; border-radius: 5px; }
+        .logo { width: 100px; height: auto; display: block; margin: 10px auto; }
         footer { text-align: center; padding: 20px 10px; background: #222; color: #fff; }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
-        .fade { animation-name: fadeIn; animation-duration: 2s; }
+        header img { animation: float 6s ease-in-out infinite; }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://yourusername.github.io/your-repository/IMG_0227.jpeg" alt="Nayeem Faisal">
+        <img src="https://yourusername.github.io/your-repository/your-photo-url.jpg" alt="Nayeem Faisal">
         <h1>Nayeem Faisal (He/Him)</h1>
         <p>Researcher / Information System Specialist / IT Consultant / System Developer</p>
     </header>
 
-    <section class="fade">
+    <section>
         <h2>Professional Experience</h2>
         <div class="job">
+            <img src="https://yourusername.github.io/your-repository/prime_university_logo.jpeg" alt="Prime University Logo" class="logo">
             <h3>Researcher - Prime University</h3>
             <p>Work Study, Ministry of Science and Technology, Bangladesh</p>
             <p>Jun 2023 - Oct 2023 · Dhaka, Bangladesh (Remote)</p>
             <p><span class="skills">Project Management</span><span class="skills">Project Planning</span></p>
         </div>
         <div class="job">
+            <img src="https://yourusername.github.io/your-repository/southtechgroup_logo.jpeg" alt="Southtech Limited Logo" class="logo">
             <h3>Java Programmer - Southtech Limited</h3>
             <p>Internship</p>
             <p>Nov 2022 - Sep 2023 · Dhaka, Bangladesh</p>
             <p>Developing backend Java API bridges.</p>
         </div>
         <div class="job">
+            <img src="https://yourusername.github.io/your-repository/scholars.jpeg" alt="Scholars Logo" class="logo">
             <h3>Fashion Model - Sailor</h3>
             <p>Part-time</p>
             <p>May 2020 - Sep 2021 · Bangladesh</p>
             <p>Main lead model for men's clothing.</p>
         </div>
         <div class="job">
+            <img src="https://yourusername.github.io/your-repository/hochschule_augsburg_logo.jpeg" alt="Hochschule Augsburg Logo" class="logo">
             <h3>Project Intern - Ministry of Science and Technology, Bangladesh</h3>
             <p>Sep 2024 - Present · Dhaka, Bangladesh (Remote)</p>
             <p>Cybersecurity Threat Detection using Machine Learning and AI.</p>
         </div>
     </section>
 
-    <section class="fade">
+    <section>
         <h2>Education</h2>
         <div>
+            <img src="https://yourusername.github.io/your-repository/university_of_development_alternative_logo.jpeg" alt="University of Development Alternative Logo" class="logo">
             <h3>University of Development Alternative</h3>
             <p>Bachelor of Science - BS in Computer Engineering (3rd year)</p>
             <p>Feb 2021 - Present</p>
         </div>
         <div>
+            <img src="https://yourusername.github.io/your-repository/hochschule_augsburg_logo.jpeg" alt="Hochschule Augsburg Logo" class="logo">
             <h3>Technische Hochschule Augsburg</h3>
             <p>Bachelor of Applied Science - BASc, International Information System</p>
             <p>Sep 2024 - Sep 2027</p>
         </div>
     </section>
 
-    <section class="fade">
+    <section>
         <h2>Licenses & Certifications</h2>
         <p>Google - Introduction to Generative AI, Issued Mar 2024</p>
     </section>
 
-    <footer class="fade">
-        <p>Contact information: [nfaisal204@gmail.com]</p>
-        <p>LinkedIn: [https://www.linkedin.com/in/nayeem-faisal-721619296/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app]</p>
+    <footer>
+        <p>Email: <a href="mailto:nfaisal204@gmail.com">nfaisal204@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/nayeem-faisal-721619296/">Visit my LinkedIn profile</a></p>
     </footer>
-
-    <script>
-        // Example of simple animation
-        window.addEventListener('scroll', function() {
-            let elements = document.querySelectorAll('.fade');
-            let screenSize = window.innerHeight;
-            
-            for (var i = 0; i < elements.length; i++) {
-                let element = elements[i];
-                if (element.getBoundingClientRect().top < screenSize) {
-                    element.style.opacity = 1;
-                } else {
-                    element.style.opacity = 0;
-                }
-            }
-        });
-    </script>
 </body>
 </html>
 
+    
