@@ -2,161 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nayeem Faisal - Resume</title>
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <title>Nayeem Faisal - Interactive Resume</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         body { 
             font-family: 'Arial', sans-serif; 
             margin: 0; 
             padding: 0; 
-            background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); 
+            background: #f0f0f0; 
             color: #333; 
         }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .typewriter h3 {
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
-        header {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #fff; 
-            padding: 20px 0; 
-            text-align: center; 
-            position: relative; 
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: black } }
+        .computer-science-section {
+            background-image: url('https://raw.githubusercontent.com/Nayeemfaisal/Resume/master/Background.jpg');
+            background-size: cover;
+            color: white;
+            padding: 20px;
         }
-        header img { 
-            border-radius: 50%; 
-            width: 140px; 
-            border: 5px solid white; 
-            animation: float 6s ease-in-out infinite; 
-        }
-        header:after { 
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
+        #scene-container {
             width: 100%; 
-            height: 100%; 
-            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%); 
-            opacity: 0.85; 
-            z-index: -1; 
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        section { 
-            padding: 20px; 
-            max-width: 800px; 
-            margin: 20px auto; 
-            background: #fff; 
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15); 
-            border-radius: 8px; 
-            opacity: 0.95; 
-            transform: translateY(20px); 
-            transition: transform 0.3s ease-out, opacity 0.3s ease-out; 
-        }
-        section:hover { 
-            transform: translateY(0); 
-            opacity: 1; 
-        }
-        h1, h2 { 
-            text-align: center; 
-        }
-        .job { 
-            margin-bottom: 15px; 
-            padding-bottom: 10px; 
-            border-bottom: 1px solid #eee; 
-        }
-        .skills { 
-            background: #e2e2e2; 
-            padding: 5px; 
-            display: inline-block; 
-            margin-right: 5px; 
-            border-radius: 5px; 
-        }
-        .logo { 
-            width: 100px; 
-            height: auto; 
-            display: block; 
-            margin: 10px auto; 
-        }
-        footer { 
-            text-align: center; 
-            padding: 20px 10px; 
-            background: #222; 
-            color: #fff; 
+            height: 400px;
+            background: url('https://raw.githubusercontent.com/Nayeemfaisal/Resume/master/3d%20logo.jpg') no-repeat center;
+            background-size: contain;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://nayeemfaisal.github.io/Resume/your-photo-url.jpg" alt="Nayeem Faisal">
-        <h1>Nayeem Faisal (He/Him)</h1>
-        <p>Researcher / Information System Specialist / IT Consultant / System Developer</p>
-        <!-- SVG Example -->
-        <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="red">
-                <animate attributeName="r" from="40" to="10" dur="2s" repeatCount="indefinite" />
-                <animate attributeName="fill" from="red" to="blue" dur="2s" repeatCount="indefinite" />
-            </circle>
-        </svg>
-    </header>
-    <section>
-        <h2>Professional Experience</h2>
-        <div class="job">
-            <img src="https://nayeemfaisal.github.io/Resume/prime_university_logo.jpeg" alt="Prime University Logo" class="logo">
-            <h3>Researcher - Prime University</h3>
-            <p>Work Study, Ministry of Science and Technology, Bangladesh</p>
-            <p>Jun 2023 - Oct 2023 · Dhaka, Bangladesh (Remote)</p>
-            <p><span class="skills">Project Management</span><span class="skills">Project Planning</span></p>
-        </div>
-        <div class="job">
-            <img src="https://nayeemfaisal.github.io/Resume/southtechgroup_logo.jpeg" alt="Southtech Limited Logo" class="logo">
-            <h3>Java Programmer - Southtech Limited</h3>
-            <p>Internship</p>
-            <p>Nov 2022 - Sep 2023 · Dhaka, Bangladesh</p>
-            <p>Developing backend Java API bridges.</p>
-        </div>
-        <div class="job">
-            <img src="https://nayeemfaisal.github.io/Resume/sailor_by_epyllion_logo.jpeg" alt="Sailor by Epyllion Logo" class="logo">
-            <h3>Fashion Model - Sailor</h3>
-            <p>Part-time</p>
-            <p>May 2020 - Sep 2021 · Bangladesh</p>
-            <p>Main lead model for men's clothing.</p>
-        </div>
-        <div class="job">
-            <img src="https://nayeemfaisal.github.io/Resume/Ministry%20of%20Science.logo.jpeg" alt="Ministry of Science Logo" class="logo">
-            <h3>Project Intern - Ministry of Science and Technology, Bangladesh</h3>
-            <p>Sep 2024 - Present · Dhaka, Bangladesh (Remote)</p>
-            <p>Cybersecurity Threat Detection using Machine Learning and AI.</p>
-        </div>
+    <div id="scene-container"></div>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({alpha: true});
+        renderer.setSize(window.innerWidth, 400);
+        document.getElementById('scene-container').appendChild(renderer.domElement);
+
+        const textureLoader = new THREE.TextureLoader();
+        const logoTexture = textureLoader.load('https://raw.githubusercontent.com/Nayeemfaisal/Resume/master/3d%20logo.jpg');
+
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshBasicMaterial({ map: logoTexture });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        camera.position.z = 5;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+    <div class="typewriter">
+        <h3>System.out.println("Hello, World!");</h3>
+    </div>
+    <section class="computer-science-section">
+        <h2>Computer Science and Engineering</h2>
+        <p>Exploring advanced topics in AI, machine learning, and system architecture.</p>
     </section>
-    <section>
-        <h2>Education</h2>
-        <div>
-            <img src="https://nayeemfaisal.github.io/Resume/university_of_development_alternative_logo.jpeg" alt="University of Development Alternative Logo" class="logo">
-            <h3>University of Development Alternative</h3>
-            <p>Bachelor of Science - BS in Computer Engineering (3rd year)</p>
-            <p>Feb 2021 - Present</p>
-        </div>
-        <div>
-            <img src="https://nayeemfaisal.github.io/Resume/hochschule_augsburg_logo.jpeg" alt="Hochschule Augsburg Logo" class="logo">
-            <h3>Technische Hochschule Augsburg</h3>
-            <p>Bachelor of Applied Science - BASc, International Information System</p>
-            <p>Sep 2024 - Sep 2027</p>
-        </div>
-    </section>
-    <section>
-        <h2>Licenses & Certifications</h2>
-        <p>Google - Introduction to Generative AI, Issued Mar 2024</p>
-    </section>
-    <footer>
-        <p>Email: <a href="mailto:nfaisal204@gmail.com">nfaisal204@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/nayeem-faisal-721619296/">Visit my LinkedIn profile</a></p>
-    </footer>
 </body>
 </html>
-
