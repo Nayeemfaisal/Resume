@@ -2,38 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta viewport="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nayeem Faisal - Interactive Resume</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         body { 
             font-family: 'Arial', sans-serif; 
-            margin: 0; 
-            padding: 0; 
             background: #f0f0f0; 
             color: #333; 
         }
         .typewriter h3 {
-            overflow: hidden;
-            border-right: .15em solid orange;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typewriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Centering the content */
+            letter-spacing: .15em; /* Adjusting the spacing between letters */
+            animation: 
+                typing 3.5s steps(40, end), /* The typing effect */
+                blink-caret .75s step-end infinite; /* The blinking cursor effect */
         }
-        @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: black } }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black }
+        }
         .computer-science-section {
-            background-image: url('https://raw.githubusercontent.com/Nayeemfaisal/Resume/master/Background.jpg');
+            background-image: url('https://your-repository-url.com/computer-background.jpg'); /* Set your background image here */
             background-size: cover;
             color: white;
             padding: 20px;
         }
         #scene-container {
-            width: 100%; 
+            width: 100%;
             height: 400px;
-            background: url('https://raw.githubusercontent.com/Nayeemfaisal/Resume/master/3d%20logo.jpg') no-repeat center;
-            background-size: contain;
         }
     </style>
 </head>
@@ -42,30 +46,27 @@
     <script>
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({alpha: true});
+        const renderer = new THREE.WebGLRenderer({ alpha: true }); // Ensure that the background is transparent
         renderer.setSize(window.innerWidth, 400);
         document.getElementById('scene-container').appendChild(renderer.domElement);
-
-        const textureLoader = new THREE.TextureLoader();
-        const logoTexture = textureLoader.load('https://raw.githubusercontent.com/Nayeemfaisal/Resume/master/3d%20logo.jpg');
-
-        const geometry = new THREE.BoxGeometry();
-        const material = new THREE.MeshBasicMaterial({ map: logoTexture });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        camera.position.z = 5;
-
+        
+        const geometry = new THREE.BoxGeometry(); // Basic cube geometry
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Basic material, green color
+        const cube = new THREE.Mesh(geometry, material); // Create mesh with geometry and material
+        scene.add(cube); // Add cube to the scene
+        
+        camera.position.z = 5; // Camera distance from the cube
+        
         function animate() {
-            requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render(scene, camera);
+            requestAnimationFrame(animate); // Call animate again once the browser is ready to draw again
+            cube.rotation.x += 0.01; // Rotate the cube around x-axis
+            cube.rotation.y += 0.01; // Rotate the cube around y-axis
+            renderer.render(scene, camera); // Render the scene with camera
         }
-        animate();
+        animate(); // Start the animation function
     </script>
     <div class="typewriter">
-        <h3>System.out.println("Hello, World!");</h3>
+        <h3>Welcome to NF World</h3> <!-- Updated text -->
     </div>
     <section class="computer-science-section">
         <h2>Computer Science and Engineering</h2>
